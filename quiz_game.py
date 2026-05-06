@@ -15,7 +15,7 @@ def play_again():
 
 while True:
 
-    ready = input("Are you ready for the Harry Potter Quiz? (yes/no): ").lower()
+    ready = input("Are you ready for the Quiz? (yes/no): ").lower()
 
     if ready != "yes":
         exit_choice = input("Do you want to exit? (yes/no): ").lower()
@@ -25,9 +25,12 @@ while True:
         else:
             continue
 
-    file = open("questions.txt", "r")
-
-    lines = file.readlines()
+    try:
+        file = open("questions.txt", "r")
+        lines = file.readlines()
+    except FileNotFoundError:
+        print("questions.txt file not found! Please create the file first.")
+        break
 
     if len(lines) == 0:
         print("No questions available!")
@@ -38,13 +41,23 @@ while True:
     total_questions = 0
 
     for line in lines:
+        line = line.strip()
+        
+        # Skip empty lines
+        if not line:
+            continue
+            
+        parts = line.split("|")
+        
+        # Skip lines that don't have exactly a question and an answer
+        if len(parts) != 2:
+            print(f"Skipping improperly formatted line: {line}")
+            continue
+            
         total_questions = total_questions + 1
 
-        line = line.strip()
-        parts = line.split("|")
-
-        question = parts[0]
-        answer = parts[1]
+        question = parts[0].strip()
+        answer = parts[1].strip()
 
         print("\n" + question)
         user_answer = input("Your answer (or type skip): ")
@@ -53,7 +66,7 @@ while True:
             print("Skipped ⏭️")
             continue
 
-        if user_answer.strip().lower() == answer.strip().lower():
+        if user_answer.strip().lower() == answer.lower():
             print("Correct 👍")
             score = score + 1
         else:
@@ -63,15 +76,18 @@ while True:
     file.close()
 
     print("\nFinal Score:", score)
-    percentage = (score / total_questions) * 100
-    print("Percentage Correct:", percentage)
+    if total_questions > 0:
+        percentage = (score / total_questions) * 100
+        print("Percentage Correct:", percentage)
 
-    if percentage >= 80:
-        print("Excellent 🟢 Well done,", name + "!")
-    elif percentage >= 50:
-        print("Good 🟡 Keep improving,", name + "!")
+        if percentage >= 80:
+            print("Excellent 🟢 Well done,", name + "!")
+        elif percentage >= 50:
+            print("Good 🟡 Keep improving,", name + "!")
+        else:
+            print("Try again 🔴 Don't give up,", name + "!")
     else:
-        print("Try again 🔴 Don't give up,", name + "!")
+        print("No valid questions were processed.")
 
     if not play_again():
         print("Goodbye!")
