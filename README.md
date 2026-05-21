@@ -8,20 +8,17 @@ Below is an interactive map of the projects housed in this repository. Click on 
 
 ### 🔹 Independent Production Projects
 
-* **[Project 1: Report Card Generator](./independent-project-1)** A interactive Python CLI application featuring continuous data validation loops to compute student grades, averages, and performance metrics.
+* **[Project 1: Report Card Generator](Report%20Card%20Generator)** — An interactive Python CLI application featuring continuous data validation loops to compute student grades, averages, and performance metrics.
   
-* **[Project 2: Quiz Master Pro](./independent-project-2)** A function-based Harry Potter trivia game showcasing modular programming design and case-insensitive terminal input matching.
+* **[Project 2: Quiz Master Pro](Quiz%20Master%20Pro)** — A function-based Harry Potter trivia game showcasing modular programming design and case-insensitive terminal input matching.
   
-* **[Project 3: Quiz Master Plus](./independent-project-3)** An advanced evolution of the trivia system utilizing indexed parallel lists and user onboarding/readiness workflows.
+* **[Project 3: Quiz Master Plus](Quiz%20Master%20Plus)** — An advanced evolution of the trivia system utilizing indexed parallel lists and user onboarding/readiness workflows.
 
-* **[Project 4: Quiz Master (CMS Edition)](./independent-project-4)** A persistent CRUD content management system using localized File I/O text databases (`questions.txt`) with robust data sanitization.
+* **[Project 4: Quiz Master Pro Phase 3](Quiz%20Master%20Pro%20Phase%203)** — A persistent CRUD content management system using localized File I/O text databases (`questions.txt`) with robust data sanitization.
 
 ### 📈 Active Labs (Work in Progress)
 
-* **[Project 5: Reading Analytics Lab](./reading-analytics-lab)** *Status: Active Development (WIP)* — A personal library analytics dashboard utilizing JSON serialization and `matplotlib` graphical trend visualizations. Currently being refactored for `pandas` integration.
-
-### 🌐 Project Ecosystems
-* **[Ecosystem Component 1](./ecosystem-folder-1)** — *Upcoming* * **[Ecosystem Component 2](./ecosystem-folder-2)** — *Upcoming*
+* **[Project 5: Reading Analytics Lab](Reading%20Analytics%20Lab)** — *Status: Active Development (WIP)* — A personal library analytics dashboard utilizing JSON serialization and `matplotlib` graphical trend visualizations. Currently being refactored for `pandas` integration.
 
 ---
 
@@ -40,10 +37,10 @@ To run any of these applications locally, clone this master repository and navig
 
 ```bash
 # 1. Clone the master repository
-git clone [https://github.com/your-username/projects.git](https://github.com/your-username/projects.git)
+git clone [https://github.com/anushka-ashwinkumar/projects.git](https://github.com/anushka-ashwinkumar/projects.git)
 
 # 2. Change into the main directory
 cd projects
 
 # 3. Choose a project folder to explore (Example)
-cd reading-analytics-lab
+cd "Reading Analytics Lab"
